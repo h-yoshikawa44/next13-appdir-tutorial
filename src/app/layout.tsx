@@ -1,4 +1,5 @@
-import { Noto_Sans_JP } from 'next/font/google'
+import { Noto_Sans_JP } from 'next/font/google';
+import './globals.css';
 
 // フォントの読み込み
 const NotoSansJP = Noto_Sans_JP({
