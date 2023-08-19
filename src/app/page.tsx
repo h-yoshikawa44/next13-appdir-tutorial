@@ -1,4 +1,4 @@
-// 1. ページの表示内容
+// ページの表示内容
 export default function Page() {
   return (
     <main>
