@@ -35,7 +35,6 @@ const Header: React.FC = () => {
           </Link>
           {/* 画面幅が768px未満の場合は非表示 */}
           <nav className="hidden md:flex gap-12">
-            {/* リンク先は未実装のためトップページに遷移 */}
             <Link
               href="/notes"
               className="text-gray-600 hover:text-pink-500 active:text-pink-700 text-lg font-semibold transition duration-100"
@@ -49,7 +48,7 @@ const Header: React.FC = () => {
               FAQ
             </Link>
             <Link
-              href="/"
+              href="/settings"
               className="text-gray-600 hover:text-pink-500 active:text-pink-700 text-lg font-semibold transition duration-100"
             >
               Setting
