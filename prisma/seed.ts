@@ -6,6 +6,7 @@ async function main() {
   // delete all
   await prisma.metadata.deleteMany();
   await prisma.note.deleteMany();
+
   // seeding
   const metadatas: Prisma.MetadataCreateInput[] = [
     {

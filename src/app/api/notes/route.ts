@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { zUpsertNote } from "@/app/notes/type";
 import { prisma } from "../../../../globals/db";
 
-// このAPIを使用するpagesやlayoutsで動的レンダリングを強制する
+// この API を使用する pages や layouts で動的レンダリングを強制する
 export const dynamic = "force-dynamic";
 
-// ノート一覧を取得するAPI
+// ノート一覧を取得する API
 export async function GET() {
-  // DBからノート一覧を取得
+  // DB からノート一覧を取得
   const notes = await prisma.note.findMany();
   return NextResponse.json(notes);
 }

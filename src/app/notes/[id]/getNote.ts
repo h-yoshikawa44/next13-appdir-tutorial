@@ -1,5 +1,5 @@
-import { apiUrl } from "@/constants/api";
 import "server-only";
+import { apiUrl } from "@/constants/api";
 import { zNote } from "@/app/notes/type";
 
 export const getNote = async (id: string) => {

@@ -1,10 +1,10 @@
-import ErrorBoundary from "@/components/ErrorBoundary";
-import FetchError from "@/components/FetchError";
-import Loading from "@/components/Loading";
-import { apiUrl } from "@/constants/api";
 import Link from "next/link";
 import { Suspense } from "react";
 import "server-only";
+import { apiUrl } from "@/constants/api";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import FetchError from "@/components/FetchError";
+import Loading from "@/components/Loading";
 import NoteList from "./NoteList";
 import { zNotes } from "./type";
 
@@ -17,8 +17,9 @@ export const metadata = {
 };
 
 export default async function Page() {
-  // APIを用いたデータ取得
+  // API を用いたデータ取得
   const notes = await getNotes();
+
   return (
     <main className="mx-2 sm:mx-4 relative">
       <Link
@@ -41,7 +42,7 @@ export default async function Page() {
         <span className="sr-only">New Note</span>
       </Link>
       <h2 className="mb-6 text-gray-400 text-xs">List Notes</h2>
-      {/* Client ComponentsのSuspenseの使用 */}
+      {/* Client Components の Suspense の使用 */}
       <ErrorBoundary fallback={<FetchError />}>
         <Suspense fallback={<Loading />}>
           <NoteList initialState={notes} />

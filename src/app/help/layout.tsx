@@ -3,10 +3,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 // `/help/faq`と`/help/tos`で共通するレイアウト
-// https://beta.nextjs.org/docs/routing/pages-and-layouts#nesting-layouts
+// https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#nesting-layouts
 export default function Layout({ children }: { children: React.ReactNode }) {
-  // パスを取得してUIを変更する
+  // パスを取得して UI を変更する
   const pathname = usePathname();
+
   return (
     <section className="mx-2 sm:mx-4">
       {/* Include shared UI here e.g. a header or sidebar */}

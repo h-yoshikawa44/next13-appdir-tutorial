@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Metadata } from "next/types";
-import { getNote } from "../getNote";
+import { getNote } from "@/app/notes/[id]/getNote";
 import EditNote from "./EditNote";
+
 export const revalidate = 0;
 
 export async function generateMetadata({
@@ -15,6 +16,7 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: { id: string } }) {
   const note = await getNote(params.id);
+
   return (
     <main className="mx-2 sm:mx-4">
       <Link

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
-import { Note } from "../type";
+import { Note } from "@/app/notes/type";
 
 type Props = {
   item: Note;
@@ -10,6 +10,7 @@ type Props = {
 
 const Note: React.FC<Props> = ({ item }) => {
   const router = useRouter();
+
   const deleteNote = useCallback(async () => {
     const res = await fetch(`/api/notes/${item.id}`, {
       method: "DELETE",

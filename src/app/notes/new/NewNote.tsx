@@ -6,10 +6,11 @@ import { z } from "zod";
 
 const NewNote: React.FC = () => {
   const router = useRouter();
-  // フォームの入力値を管理するためのstate
+  // フォームの入力値を管理するための state
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  // 作成APIを呼び出す関数
+
+  // 作成 API を呼び出す関数
   const createNote = useCallback(async () => {
     const res = await fetch(`/api/notes`, {
       method: "POST",

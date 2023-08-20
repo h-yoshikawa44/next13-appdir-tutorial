@@ -1,4 +1,4 @@
-// フックを用いているためClient Componentsとして定義
+// フックを用いているため Client Components として定義
 "use client";
 import Link from "next/link";
 import useSWR from "swr";

@@ -1,5 +1,5 @@
-import Nl2br from "@/components/Nl2br";
 import { prisma } from "../../../../globals/db";
+import Nl2br from "@/components/Nl2br";
 
 // 30秒ごとに再生成
 export const revalidate = 30;
@@ -8,6 +8,7 @@ export default async function Page() {
   const data = await prisma.metadata.findUniqueOrThrow({
     where: { key: "faq" },
   });
+
   return (
     <main>
       <h1 className="text-xl my-2">Frequently Asked Questions</h1>

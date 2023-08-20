@@ -6,6 +6,7 @@ import { zVersion } from "./type";
 
 const Header: React.FC = () => {
   const title = "Awesome Note App";
+
   return (
     <div className="bg-white lg:pb-6">
       <div className="max-w-screen-2xl px-2 md:px-4 mx-auto">
@@ -71,14 +72,15 @@ const Header: React.FC = () => {
 };
 
 const Version = async () => {
-  // 5. DBからデータ取得
-  // versionをDBから取得
+  // DB からデータ取得
+  // version を DB から取得
   const metadata = await prisma.metadata.findUniqueOrThrow({
     where: {
       key: "version",
     },
   });
   const version = zVersion.parse(metadata.value);
+
   return `v${version}`;
 };
 

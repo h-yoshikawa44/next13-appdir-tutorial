@@ -24,10 +24,10 @@ model Note {
   id        Int      @id @default(autoincrement())
   title     String
   body      String
-  // カラム名はsnake_case、TypeScriptのプロパティ名はcamelCase
+  // カラム名は snake_case、TypeScript のプロパティ名は camelCase
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
-  // テーブル名はnotes
+  // テーブル名は notes
   @@map("notes")
 }

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
-import { Note } from "../../type";
+import { Note } from "@/app/notes/type";
 
 type Props = {
   item: Note;
@@ -12,6 +12,7 @@ const EditNote: React.FC<Props> = ({ item }) => {
   const router = useRouter();
   const [title, setTitle] = useState(item.title);
   const [body, setBody] = useState(item.body);
+
   const updateNote = useCallback(async () => {
     const res = await fetch(`/api/notes/${item.id}`, {
       method: "PUT",

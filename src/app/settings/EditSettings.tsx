@@ -1,15 +1,18 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
-import { Settings } from "../type";
+import { Settings } from "@/app/type";
+
 type Props = {
   value: Settings;
 };
+
 const EditSettings: React.FC<Props> = ({ value }) => {
   const router = useRouter();
   const [version, setVersion] = useState(value.version);
   const [faq, setFaq] = useState(value.faq);
   const [tos, setTos] = useState(value.tos);
+
   const updateSettings = useCallback(async () => {
     const res = await fetch(`/api/settings`, {
       method: "PUT",

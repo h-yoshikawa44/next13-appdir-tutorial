@@ -3,7 +3,7 @@ import { prisma } from "../../../../../globals/db";
 import { NextRequest, NextResponse } from "next/server";
 
 // /api/notes/[id]/route.ts
-// ノートのIDはパスパラメーター`[id]`で受け取る
+// ノートの ID はパスパラメーター`[id]`で受け取る
 
 // ノートを1件取得
 export async function GET(

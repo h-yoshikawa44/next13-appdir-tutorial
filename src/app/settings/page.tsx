@@ -1,5 +1,5 @@
-import { prisma } from "../../../globals/db";
 import "server-only";
+import { prisma } from "../../../globals/db";
 import { zSettings } from "@/app/type";
 import EditSettings from "./EditSettings";
 
@@ -10,8 +10,9 @@ export const metadata = {
 };
 
 export default async function Page() {
-  // ページ内でのDBからのデータ取得
+  // ページ内での DB からのデータ取得
   const settings = await getSettings();
+
   return (
     <main className="mx-2 sm:mx-4">
       <h2 className="my-4 text-gray-400 text-xs">Settings</h2>
